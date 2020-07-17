@@ -66,7 +66,20 @@ list.forEach((el, i) => {
 //And display the results in the elements with the 'id = volume' and 'id = area' respectively
 //hint: the volumen of a sphere is ((4/3) × π × r^3) and the surface area is (4 × π × r^2)
 
-const calculate_sphere = () => {};
+const calculate_sphere = () => {
+  var volume;
+  var area;
+  var radius = document.getElementById("radius").value;
+  radius = Math.abs(radius);
+  volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+  volume = volume.toFixed(4);
+  document.getElementById("volume").value = volume;
+  area = 4 * Math.PI * Math.pow(radius, 2);
+  area = area.toFixed(4);
+  document.getElementById("area").value = area;
+
+  return false;
+};
 
 window.onload = document.getElementById("MyForm").onsubmit = calculate_sphere; // this execute the volume_sphere function each time the calculate (submit) button is clicked
 
