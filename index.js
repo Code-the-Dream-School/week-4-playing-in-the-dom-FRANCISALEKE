@@ -33,32 +33,41 @@ const removeItemButton = document.querySelector("button.removeItemButton");
 const eel = document.querySelector("#a-2");
 
 const ul = document.createElement("ul");
-const button = document.createElement("button");
-button.innerText = "Remove";
+const $selectInput = document.createElement("select");
+const $removeBtn = document.createElement("button");
+$removeBtn.innerText = "Remove";
 
-button.innerText = "Remove Item";
-button.classList.add("description");
+colors.forEach((color, i) => addColor(color));
 
-eel.append(button);
-eel.append(ul);
+$removeBtn.addEventListener("click", (e) => {
+  const list = document.querySelectorAll("#a-2 ul li");
+  const currentValue = $selectInput.value;
+  if (list.length) {
+    list.forEach((el, i) => {
+      if (el.textContent === currentValue) {
+        el.remove();
+      }
+    });
+  }
+});
 
 colors.forEach((color, i) => {
+  const $options = document.createElement("option");
+  $options.setAttribute("value", color);
+  $options.innerText = color;
+
+  $selectInput.append($options);
+});
+
+eel.append($selectInput);
+eel.append($removeBtn);
+eel.append(ul);
+
+function addColor(color) {
   const li = document.createElement("li");
   li.innerText = color;
-  const button = document.createElement("button");
-  button.innerText = "Remove";
-  li.append(button);
-
   ul.append(li);
-});
-
-const list = document.querySelectorAll("#a-2 ul li");
-list.forEach((el, i) => {
-  //   const a = document.querySelector(el);
-  el.childNodes[1].addEventListener("click", (e) => {
-    e.currentTarget.parentElement.remove();
-  });
-});
+}
 
 //------------------------Question 3 ---------------------------
 //Now lets mix some maths and programming. In the function below (calculate_sphere) write a JavaScript program to calculate the volume and surface area of a sphere.
@@ -87,3 +96,5 @@ window.onload = document.getElementById("MyForm").onsubmit = calculate_sphere; /
 //Now in this exercise we want you to create 3 buttons, each with a click action that will hide the respective question's answer above. So if you click the "Hide Question 1" button it will hide from the DOM the answer to your first exercise. If you click it again it will show the answer.
 
 //resolve // QUESTION 4 here
+let button1 = document.createElement("button");
+button1.innerHTML = "Hide question 1";
