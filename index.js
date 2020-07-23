@@ -95,7 +95,7 @@ window.onload = document.getElementById("MyForm").onsubmit = calculate_sphere; /
 //------------------------Question 4 ---------------------------
 //Now in this exercise we want you to create 3 buttons, each with a click action that will hide the respective question's answer above. So if you click the "Hide Question 1" button it will hide from the DOM the answer to your first exercise. If you click it again it will show the answer.
 
-//resolve // QUESTION 4 here
+//resolve // QUESTION 4 here:
 let button1 = document.createElement("button");
 let button2 = document.createElement("button");
 let button3 = document.createElement("button");
