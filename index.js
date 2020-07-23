@@ -26,7 +26,7 @@ square.addEventListener("click", () => {
 // append the button as a child of the element with the 'id = a-2'
 
 //resolve // QUESTION 2 here
-
+// declaring color Div element
 const colors = ["red", "white", "black", "green", "orange", "purple"];
 const removeItemButton = document.querySelector("button.removeItemButton");
 
@@ -97,4 +97,7 @@ window.onload = document.getElementById("MyForm").onsubmit = calculate_sphere; /
 
 //resolve // QUESTION 4 here
 let button1 = document.createElement("button");
+let button2 = document.createElement("button");
+let button3 = document.createElement("button");
 button1.innerHTML = "Hide question 1";
+button;
