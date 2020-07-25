@@ -27,6 +27,7 @@ square.addEventListener("click", () => {
 
 //resolve // QUESTION 2 here
 // declaring color Div element
+
 const colors = ["red", "white", "black", "green", "orange", "purple"];
 const removeItemButton = document.querySelector("button.removeItemButton");
 
@@ -75,6 +76,7 @@ function addColor(color) {
 //And display the results in the elements with the 'id = volume' and 'id = area' respectively
 //hint: the volumen of a sphere is ((4/3) × π × r^3) and the surface area is (4 × π × r^2)
 
+let sphere = document.querySelector("#a-3");
 const calculate_sphere = () => {
   var volume;
   var area;
@@ -99,5 +101,40 @@ window.onload = document.getElementById("MyForm").onsubmit = calculate_sphere; /
 let button1 = document.createElement("button");
 let button2 = document.createElement("button");
 let button3 = document.createElement("button");
+
+//creating a click action to hide question 1,question 2 and question 3
 button1.innerHTML = "Hide question 1";
-button;
+let answer = document.querySelector("#a-4");
+answer.appendChild(button1);
+button1.addEventListener("click", function () {
+  if (myElement.style.display === "none") {
+    myElement.style.display = "block";
+    button1.textContent = "hide question 1";
+  } else {
+    myElement.style.display = "none";
+    button1.textContent = "show question 1";
+  }
+});
+button2.innerHTML = "Hide question 2";
+answer.appendChild(button2);
+button2.addEventListener("click", function () {
+  if (eel.style.display === "none") {
+    eel.style.display = "block";
+    button2.textContent = "Hide question 2";
+  } else {
+    eel.style.display = "none";
+    button2.textContent = "show question 2";
+  }
+});
+
+button3.innerHTML = "Hide question 3";
+answer.appendChild(button3);
+button3.addEventListener("click", function () {
+  if (sphere.style.display === "none") {
+    sphere.style.display = "block";
+    button3.textContent = "Hide question 3";
+  } else {
+    sphere.style.display = "none";
+    button3.textContent = "Show question 3";
+  }
+});
